@@ -19,9 +19,10 @@ import 'hammerjs';
 
 import { AppComponent } from './app.component';
 import { NgxMaskModule } from './ngx-mask/ngx-mask.module';
+import { AppInputComponent } from './app-input/app-input.component';
 
 @NgModule({
-    declarations: [AppComponent, TestMaskComponent],
+    declarations: [AppComponent, TestMaskComponent, AppInputComponent],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,

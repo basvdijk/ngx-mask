@@ -8,6 +8,7 @@ type SN = string | number;
 })
 export class AppComponent {
     public phone: number = 123456789;
+    public testData: number = 123456.789;
     public customMaska: [string, pattern];
 
     public form: FormControl;

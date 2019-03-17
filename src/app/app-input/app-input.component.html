@@ -1,0 +1,16 @@
+<div>
+  <input
+    type="text"
+    #input
+    #inputRef="ngModel"
+    [(ngModel)]="value"
+    [required]="isRequired"
+    [placeholder]="placeholder"
+    [ngModelOptions]="{ updateOn: 'change' }"
+    class="form-control"
+    (blur)="onBlur()"
+    [disabled]="!editMode"
+    mask="dot_separator"
+    [dropSpecialCharacters]="true"
+  />
+</div>
