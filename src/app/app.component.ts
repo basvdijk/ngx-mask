@@ -4,9 +4,9 @@ type SN = string | number;
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+    public mask: string = '';
     public phone: number = 123456789;
     public testData: number = 123456.789;
     public customMaska: [string, pattern];
@@ -21,16 +21,18 @@ export class AppComponent {
     public repeatForm: FormControl;
     public separatorForm: FormControl;
     public percent: FormControl;
+    public formSecureInput: FormControl;
 
     public pattern: pattern = {
         P: {
-            pattern: new RegExp('\\d')
-        }
+            pattern: new RegExp('\\d'),
+        },
     };
 
     public numberOrStringFormModel: SN = '';
     public clearIfNotMatchModel: SN = '';
     public formModelDate: SN = '';
+    public secureMask: SN = '';
     public cpfModel: SN = '';
     public dateModel: SN = '';
     public showMaskModel: SN = '';
@@ -38,12 +40,16 @@ export class AppComponent {
     public sufixModel!: SN;
     public repeatFormModel!: SN;
     public separatorFormModel!: SN;
+    public separatorPrecisionSeparatorFormModel!: SN;
+    public separatorZeroPrecisionSeparatorFormModel!: SN;
     public dotSeparatorFormModel!: SN;
-    public dotPrecisionSeparatorFormModel!: SN;
+    public dotPrecisionSeparatorFormModel: SN = '';
     public dotZeroPrecisionSeparatorFormModel!: SN;
     public commaSeparatorFormModel!: SN;
-    public commaPrecisionSeparatorFormModel!: SN;
+    public commaPrecisionSeparatorFormModel: SN = '';
     public commaZeroPrecisionSeparatorFormModel!: SN;
+    public separatorPrecisionSeparatorForm: FormControl;
+    public separatorZeroPrecisionSeparatorForm: FormControl;
     public dotSeparatorForm!: FormControl;
     public dotPrecisionSeparatorForm!: FormControl;
     public dotZeroPrecisionSeparatorForm!: FormControl;
@@ -55,17 +61,20 @@ export class AppComponent {
         this.form = new FormControl('');
         this.form1 = new FormControl('');
         this.formDate = new FormControl('');
+        this.formSecureInput = new FormControl('');
         this.cpfFormControl = new FormControl();
         this.clearIfNotMatch = new FormControl();
         this.numberOrStringForm = new FormControl();
         this.sufixForm = new FormControl('');
         this.repeatForm = new FormControl('');
         this.separatorForm = new FormControl('');
+        this.separatorPrecisionSeparatorForm = new FormControl('');
+        this.separatorZeroPrecisionSeparatorForm = new FormControl('');
         this.dotSeparatorForm = new FormControl('');
-        this.dotPrecisionSeparatorForm = new FormControl('');
+        this.dotPrecisionSeparatorForm = new FormControl(0);
         this.dotZeroPrecisionSeparatorForm = new FormControl('');
         this.commaSeparatorForm = new FormControl('');
-        this.commaPrecisionSeparatorForm = new FormControl('');
+        this.commaPrecisionSeparatorForm = new FormControl(0);
         this.commaZeroPrecisionSeparatorForm = new FormControl('');
         this.percent = new FormControl('');
 
